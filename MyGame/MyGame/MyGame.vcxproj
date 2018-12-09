@@ -154,9 +154,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Assets.h" />
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="entitymanager.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="LevelOne.h" />
+    <ClInclude Include="LevelState.h" />
+    <ClInclude Include="MenuState.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Persona.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Slime.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Assets.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityMnager.cpp" />
+    <ClCompile Include="LevelOne.cpp" />
+    <ClCompile Include="levelstate.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -164,6 +187,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Persona.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Slime.cpp" />
+    <ClCompile Include="state.cpp" />
+    <ClCompile Include="StateHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "StateHandler.h"
 #include "Assets.h"
 
