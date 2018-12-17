@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "StateHandler.h"
 
-void StateHandler::addState(StateRef newState, bool isReplacingTop)
+void StateHandler::AddState(StateRef newState, bool isReplacingTop)
 {
 	_isAdding = true;
 	_isReplacingTop = isReplacingTop;
@@ -9,12 +9,12 @@ void StateHandler::addState(StateRef newState, bool isReplacingTop)
 	_newState = std::move(newState);
 }
 
-void StateHandler::removeState()
+void StateHandler::RemoveState()
 {
 	_isRemoving = true;
 }
 
-void StateHandler::processStateChanges()
+void StateHandler::ProcessStateChanges()
 {
 	//If we were to remove
 	if (_isRemoving && !_states.empty())
@@ -24,7 +24,7 @@ void StateHandler::processStateChanges()
 		if (!_states.empty())
 		{
 			//Put the top state to run
-			_states.top()->resume();
+			_states.top()->Resume();
 		}
 
 		_isRemoving = false;
@@ -43,13 +43,13 @@ void StateHandler::processStateChanges()
 			else
 			{
 				//Pause top as it will no longer be on top
-				_states.top()->pause();
+				_states.top()->Pause();
 			}
 		}
 		//Add state to pile
 		_states.push(std::move(_newState));
 		//Init the added state
-		_states.top()->init();
+		_states.top()->Init();
 		_isAdding = false;
 	}
 }

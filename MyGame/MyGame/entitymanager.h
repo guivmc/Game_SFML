@@ -14,8 +14,12 @@ public:
    ~EntityManager(){}
 
     //void addEntity(Persona e);
-	void addEntity(int x, int y, float hp, const std::string &keyName);
-	void clearAll();
-	void update(float dt);
-	void draw();
+    //Create and add an entity
+	void AddEntity(int x, int y, float hp, const std::string &keyName);
+	//Remove all entities from memory.
+	void ClearAll();
+	//Update all entities.
+	void Update(float dt);
+	//Draw all entities.
+	void Draw();
 };

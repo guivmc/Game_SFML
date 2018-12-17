@@ -5,11 +5,11 @@ EntityManager::EntityManager(GameDataRef data) : _data(data)
 {
 }
 
-void EntityManager::addEntity(int x, int y, float hp, const std::string &keyName)
+void EntityManager::AddEntity(int x, int y, float hp, const std::string &keyName)
 {
-	if (!_data->_assets.isTextureLoaded(keyName))
+	if (!_data->_assets.IsTextureLoaded(keyName))
 	{
-		_data->_assets.loadTexture(keyName);
+		_data->_assets.LoadTexture(keyName);
 	}
 
 	Persona *per = new Slime(x, y, hp, _data->_assets.getTexture(keyName));
@@ -17,26 +17,26 @@ void EntityManager::addEntity(int x, int y, float hp, const std::string &keyName
 	entities.push_back(per);
 }
 
-void EntityManager::clearAll()
+void EntityManager::ClearAll()
 {
-	for (int i = 0; i < entities.size(); i++)
+	for (size_t i = 0; i < entities.size(); i++)
 	{		
 		delete entities.at(i);
 	}
 	entities.clear();
 }
 
-void EntityManager::draw()
+void EntityManager::Draw()
 {
-	for (int i = 0; i < entities.size(); i++)
+	for (size_t i = 0; i < entities.size(); i++)
 	{
 		_data->_window.draw(entities.at(i)->getSprite());
 	}
 }
 
-void EntityManager::update(float dt)
+void EntityManager::Update(float dt)
 {
-	for (int i = 0; i < entities.size(); i++)
+	for (size_t i = 0; i < entities.size(); i++)
 	{
 		if (entities.at(i)->isDead())
 		{

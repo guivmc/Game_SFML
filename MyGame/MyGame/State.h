@@ -3,12 +3,12 @@
 class State
 {
 public:
-	virtual void init() = 0;
+	virtual void Init() = 0;
 
-	virtual void draw(float dt) = 0;
-	virtual void update(float dt) = 0;
-	virtual void input() = 0;
+	virtual void Draw(float dt) = 0;
+	virtual void Update(float dt) = 0;
+	virtual void Input() = 0;
 
-	virtual void pause() {}
-	virtual void resume() {}
+	virtual void Pause() {}
+	virtual void Resume() {}
 };

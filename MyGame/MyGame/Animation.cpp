@@ -9,11 +9,11 @@ Animation::Animation(sf::Texture &texture, sf::Vector2u imageCount, float switch
 	totalTime = 0.0f;
 	currentImage.x = 0;
 
-	resultRect.width = texture.getSize().x / float(imageCount.x);
-	resultRect.height = texture.getSize().y / float(imageCount.y);
+	resultRect.width = static_cast<int>( texture.getSize().x / static_cast<float>(imageCount.x));
+	resultRect.height = static_cast<int>(texture.getSize().y / static_cast<float>(imageCount.y));
 }
 
-void Animation::playAnim(int row, float dt)
+void Animation::PlayAnim(int row, float dt)
 {
 	currentImage.y = row;
 	totalTime += dt;

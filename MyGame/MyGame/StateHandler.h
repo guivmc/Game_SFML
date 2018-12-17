@@ -20,9 +20,9 @@ public:
    ~StateHandler() {}
 
 	//Handler logic
-	void addState(StateRef newState, bool isReplacingTop = true);
-	void removeState();
-	void processStateChanges();
+	void AddState(StateRef newState, bool isReplacingTop = true);
+	void RemoveState();
+	void ProcessStateChanges();
 	//Getters
 	StateRef &getActiveState();
 };

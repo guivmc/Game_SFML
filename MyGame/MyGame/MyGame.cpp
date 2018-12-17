@@ -8,11 +8,11 @@
 int main()
 {
 	Engine e(640, 320, "Test");
-	e.run();
+	e.Run();
 	return 0;
 }
 
-//
+
 //#include <SFML/Graphics.hpp>
 //
 //int main()

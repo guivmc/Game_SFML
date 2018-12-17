@@ -27,7 +27,9 @@ private:
 	const float dt = 1.0f / 60.0f;
 	sf::Clock _clock;
 
+	//Draw what is in the current state.
 	void drawEngine(float dt);
+	//
 	void handleInputEngine();
 
 public:
@@ -35,8 +37,10 @@ public:
    ~Engine() {}
 	Engine(int screenWidth, int screenHeight, std::string title);
 
-	void run();
-	void createMenu();
+	//Run engine.
+	void Run();
+	//Push menu state.
+	void CreateMenu();
 
 	//Getters
 	int getScreenWidth();

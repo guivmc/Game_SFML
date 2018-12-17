@@ -7,7 +7,7 @@ MenuState::MenuState(GameDataRef data) : _data(data)
 
 }
 
-void MenuState::init() 
+void MenuState::Init() 
 {
 		sfFont.loadFromFile("res/fonts/square-deal.ttf");
 		sfText[0].setString(texts[0]);
@@ -19,21 +19,21 @@ void MenuState::init()
 		sfText[1].setFont(sfFont);
 }
 
-void MenuState::draw(float dt)
+void MenuState::Draw(float dt)
 {
 	this->_data->_window.draw(this->sfText[0]);
 	this->_data->_window.draw(this->sfText[1]);
 }
 
-void MenuState::update(float dt)
+void MenuState::Update(float dt)
 {
 }
 
-void MenuState::input()
+void MenuState::Input()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 	{
 		// Switch To Game State
-		this->_data->_stateMachine.addState(StateRef(new LevelOne(_data)), true);
+		this->_data->_stateMachine.AddState(StateRef(new LevelOne(_data)), true);
 	}
 }

@@ -16,8 +16,10 @@ public:
 
    Animation(sf::Texture &texture, sf::Vector2u imageCount, float switchTime);
 
-   void playAnim(int row, float dt);
+   //Play entity animation
+   void PlayAnim(int row, float dt);
 
    //Getters
+   //Get current frame. 
    sf::IntRect &getResultRect();
 };

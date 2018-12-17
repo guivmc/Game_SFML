@@ -5,8 +5,8 @@ protected:
 	int x, y;
 
 public:
-	Entity();
-   ~Entity();
+	Entity() {}
+   ~Entity() {}
 	Entity(int x, int y);
 
 	//Getters

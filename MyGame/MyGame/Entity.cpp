@@ -1,10 +1,6 @@
 #include "pch.h"
 #include "Entity.h"
 
-Entity::Entity() {}
-
-Entity::~Entity() {}
-
 Entity::Entity(int x, int y)
 {
 	this->x = x;

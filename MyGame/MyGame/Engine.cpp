@@ -12,16 +12,16 @@ Engine::Engine(int screenWidth, int screenHeight, std::string title)
 }
 
 //Methods
-void Engine::createMenu()
+void Engine::CreateMenu()
 {
-	_data->_stateMachine.addState(StateRef(new MenuState(this->_data)), false);
+	_data->_stateMachine.AddState(StateRef(new MenuState(this->_data)), false);
 }
 
 void Engine::drawEngine(float dt)
 {
 	_data->_window.clear(sf::Color::White);
 
-	_data->_stateMachine.getActiveState()->draw(dt);
+	_data->_stateMachine.getActiveState()->Draw(dt);
 
 	_data->_window.display();
 }
@@ -37,20 +37,20 @@ void Engine::handleInputEngine()
 			_data->_window.close();
 		}
 
-		_data->_stateMachine.getActiveState()->input();
+		_data->_stateMachine.getActiveState()->Input();
 	}
 }
 
-void Engine::run()
+void Engine::Run()
 {
 	float newTime, frameTime, interpolation, accumulator = 0, 
 		  currentTime = _clock.getElapsedTime().asSeconds();
 																			
-	createMenu();
+	CreateMenu();
 
 	while (_data->_window.isOpen())
 	{
-		_data->_stateMachine.processStateChanges();
+		_data->_stateMachine.ProcessStateChanges();
 		
 		newTime = _clock.getElapsedTime().asSeconds();
 		//Frame diference 
@@ -62,7 +62,7 @@ void Engine::run()
 		while (accumulator >= dt)
 		{
 			handleInputEngine();
-			_data->_stateMachine.getActiveState()->update(dt);
+			_data->_stateMachine.getActiveState()->Update(dt);
 			accumulator -= dt;
 		}
 		interpolation = accumulator / dt;

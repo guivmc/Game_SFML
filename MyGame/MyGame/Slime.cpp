@@ -10,7 +10,7 @@ Slime::Slime(int x, int y, float hp, sf::Texture &texture)
 
 void Slime::update(float dt)
 {
-	anim.playAnim(0, dt);
+	anim.PlayAnim(0, dt);
 	this->getSprite().setTextureRect(anim.getResultRect());
 	sprite.setPosition(x, y);
 }

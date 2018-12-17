@@ -6,17 +6,18 @@
 //LevelState::~LevelState() {}
 
 
-void LevelState::draw()
+
+void LevelState::Draw()
 {
-	entityManager.draw();
+	entityManager.Draw();
 }
 
-void LevelState::input()
+void LevelState::Input()
 {
 
 }
 
-void LevelState::update(float dt)
+void LevelState::Update(float dt)
 {
-	entityManager.update(dt);
+	entityManager.Update(dt);
 }

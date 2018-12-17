@@ -14,9 +14,9 @@ private:
 public:
 	MenuState(GameDataRef data);
 
-	void init();
+	void Init();
 
-	void draw(float dt);
-	void update(float dt);
-	void input();
+	void Draw(float dt);
+	void Update(float dt);
+	void Input();
 };

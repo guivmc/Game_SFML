@@ -9,9 +9,9 @@ protected:
 	EntityManager entityManager;
 public:
 
-	void draw();
+	void Draw();
 
-	void input();
+	void Input();
 
-	void update(float dt);
+	void Update(float dt);
 };
