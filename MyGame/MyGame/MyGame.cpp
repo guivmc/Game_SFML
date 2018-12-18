@@ -12,7 +12,6 @@ int main()
 	return 0;
 }
 
-
 //#include <SFML/Graphics.hpp>
 //
 //int main()

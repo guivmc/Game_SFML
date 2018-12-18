@@ -5,29 +5,33 @@
 
 void Assets::LoadFont(const std::string & keyName)
 {
+	if (this->IsFontLoaded(keyName))
+		return;
+
 	sf::Font font;
-	if (font.loadFromFile("res/chars/" + keyName + "/" + keyName + ".png"))
+	if (font.loadFromFile("C:/res/font/" + keyName + ".ttf"))
 	{
-		fontMap[keyName] = font;
+		this->fontMap[keyName] = font;
 	}
-	
 }
 
 void Assets::UnloadAllFonts()
 {
-	fontMap.clear();
+	this->fontMap.clear();
 }
 
 bool Assets::IsFontLoaded(const std::string & keyName)
 {
-	return (fontMap.count(keyName) > 0);
+	return (this->fontMap.count(keyName) > 0);
 }
 
 sf::Font & Assets::getFont(const std::string & keyName)
 {
+	sf::Font get;
+
 	try
 	{
-		sf::Font get = fontMap.at(keyName);
+		get = this->fontMap.at(keyName);
 
 		return get;
 	}
@@ -38,8 +42,9 @@ sf::Font & Assets::getFont(const std::string & keyName)
 		#else
 		// POP UP windows message error
 		#endif
-
 	}
+
+	return get;
 }
 
 #pragma endregion
@@ -48,29 +53,34 @@ sf::Font & Assets::getFont(const std::string & keyName)
 
 void Assets::LoadTexture(const std::string &keyName)
 {
+	if (this->IsTextureLoaded(keyName))
+		return;
+
 	sf::Texture tex;
-	if (tex.loadFromFile("res/chars/" + keyName + "/" + keyName + ".png"))
+	if (tex.loadFromFile("C:/res/chars/" + keyName + "/" + keyName + ".png"))
 	{
-		textureMap[keyName] = tex;
+		this->textureMap[keyName] = tex;
 	}
 }
 
 void Assets::UnloadAllTexture()
 {
-	textureMap.clear();
+	this->textureMap.clear();
 }
 
 bool Assets::IsTextureLoaded(const std::string &keyName)
 {
-	return (textureMap.count(keyName) > 0);
+	return (this->textureMap.count(keyName) > 0);
 }
 
 //Getters
 sf::Texture &Assets::getTexture(const std::string &keyName)
 {
+	sf::Texture get;
+
 	try
 	{
-		sf::Texture get = textureMap.at(keyName);
+		get = this->textureMap.at(keyName);
 
 		return get;
 	}
@@ -81,8 +91,9 @@ sf::Texture &Assets::getTexture(const std::string &keyName)
 		#else
 		// POP UP windows message error
 		#endif
-
 	}
+	
+	return get;
 }
 
 #pragma endregion

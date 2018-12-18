@@ -4,19 +4,19 @@
 
 MenuState::MenuState(GameDataRef data) : _data(data)
 {
-
 }
 
 void MenuState::Init() 
 {
-		sfFont.loadFromFile("res/fonts/square-deal.ttf");
+		this->_data->_assets.LoadFont("square-deal");
+
 		sfText[0].setString(texts[0]);
 		sfText[0].setPosition((float) (640 / 2 - 100), 100);
-		sfText[0].setFont(sfFont);
+		sfText[0].setFont(this->_data->_assets.getFont("square-deal"));
 
 		sfText[1].setString(texts[1]);
 		sfText[1].setPosition((float)(640 / 2 - 100), 150);
-		sfText[1].setFont(sfFont);
+		sfText[1].setFont(this->_data->_assets.getFont("square-deal"));
 }
 
 void MenuState::Draw(float dt)

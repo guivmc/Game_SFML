@@ -19,7 +19,7 @@ void Engine::CreateMenu()
 
 void Engine::drawEngine(float dt)
 {
-	_data->_window.clear(sf::Color::White);
+	_data->_window.clear(sf::Color::Black);
 
 	_data->_stateMachine.getActiveState()->Draw(dt);
 

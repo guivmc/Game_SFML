@@ -9,7 +9,6 @@ private:
 
 	std::string texts[2] = { "Menu.", "Press Enter." };
 	sf::Text sfText[2];
-	sf::Font sfFont;
 
 public:
 	MenuState(GameDataRef data);
