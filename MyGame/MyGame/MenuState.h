@@ -6,10 +6,6 @@ class MenuState : public State
 {
 private:
 	GameDataRef _data;
-
-	std::string texts[2] = { "Menu.", "Press Enter." };
-	sf::Text sfText[2];
-
 public:
 	MenuState(GameDataRef data);
 
