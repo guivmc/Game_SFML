@@ -8,7 +8,7 @@ class MenuState : public State
 private:
 	GameDataRef _data;
 
-	ScreenText *text;
+	ScreenText *text[5];
 public:
 	MenuState(GameDataRef data);
 

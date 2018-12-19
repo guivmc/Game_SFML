@@ -7,7 +7,7 @@
 
 int main()
 {
-	Engine e(640, 320, "Test");
+	Engine e(1280, 640, "Test");
 	e.Run();
 	return 0;
 }
