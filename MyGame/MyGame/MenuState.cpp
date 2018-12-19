@@ -4,17 +4,17 @@
 
 MenuState::MenuState(GameDataRef data) : _data(data)
 {
+
 }
 
 void MenuState::Init()
 {
-	this->_data->_assets.LoadFont("square-deal");
-
+	this->text = new ScreenText(this->_data, "square-deal", "Menu");
 }
 
 void MenuState::Draw(float dt)
 {
-	
+	_data->_window.draw(this->text->getScreenText());
 }
 
 void MenuState::Update(float dt)

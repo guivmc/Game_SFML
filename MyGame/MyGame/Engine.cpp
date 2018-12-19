@@ -7,37 +7,37 @@ Engine::Engine(int screenWidth, int screenHeight, std::string title)
 {
 	this->screenWidth = screenWidth;
 	this->screenHeight = screenHeight;							//Window with title and close buttons
-	_data->_window.create(sf::VideoMode(screenWidth, screenHeight), title, 
+	this->_data->_window.create(sf::VideoMode(screenWidth, screenHeight), title,
 						  sf::Style::Titlebar + sf::Style::Close);
 }
 
 //Methods
 void Engine::CreateMenu()
 {
-	_data->_stateMachine.AddState(StateRef(new MenuState(this->_data)), false);
+	this->_data->_stateMachine.AddState(StateRef(new MenuState(this->_data)), false);
 }
 
 void Engine::drawEngine(float dt)
 {
-	_data->_window.clear(sf::Color::Black);
+	this->_data->_window.clear(sf::Color::Black);
 
-	_data->_stateMachine.getActiveState()->Draw(dt);
+	this->_data->_stateMachine.getActiveState()->Draw(dt);
 
-	_data->_window.display();
+	this->_data->_window.display();
 }
 
 void Engine::handleInputEngine()
 {
 	sf::Event event;
 
-	while (_data->_window.pollEvent(event))
+	while (this->_data->_window.pollEvent(event))
 	{
 		if (sf::Event::Closed == event.type)
 		{
-			_data->_window.close();
+			this->_data->_window.close();
 		}
 
-		_data->_stateMachine.getActiveState()->Input();
+		this->_data->_stateMachine.getActiveState()->Input();
 	}
 }
 
@@ -48,9 +48,9 @@ void Engine::Run()
 																			
 	CreateMenu();
 
-	while (_data->_window.isOpen())
+	while (this->_data->_window.isOpen())
 	{
-		_data->_stateMachine.ProcessStateChanges();
+		this->_data->_stateMachine.ProcessStateChanges();
 		
 		newTime = _clock.getElapsedTime().asSeconds();
 		//Frame diference 
@@ -62,7 +62,7 @@ void Engine::Run()
 		while (accumulator >= dt)
 		{
 			handleInputEngine();
-			_data->_stateMachine.getActiveState()->Update(dt);
+			this->_data->_stateMachine.getActiveState()->Update(dt);
 			accumulator -= dt;
 		}
 		interpolation = accumulator / dt;

@@ -166,6 +166,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ScreenText.h" />
     <ClInclude Include="Slime.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateHandler.h" />
@@ -191,6 +192,7 @@
     </ClCompile>
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ScreenText.cpp" />
     <ClCompile Include="Slime.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateHandler.cpp" />
