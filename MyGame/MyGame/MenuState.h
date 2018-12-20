@@ -8,7 +8,7 @@ class MenuState : public State
 private:
 	GameDataRef _data;
 
-	ScreenText *text[5];
+	ScreenText* menuSelectableItems[4];
 public:
 	MenuState(GameDataRef data);
 
@@ -17,4 +17,6 @@ public:
 	void Draw(float dt);
 	void Update(float dt);
 	void Input();
+
+	void Layout();
 };

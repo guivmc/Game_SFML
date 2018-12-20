@@ -9,12 +9,20 @@ MenuState::MenuState(GameDataRef data) : _data(data)
 
 void MenuState::Init()
 {
-	this->text[0] = new ScreenText(this->_data, "square-deal", "Main Menu");
+	for (int i = 0; i < 4; i++)
+	{
+		this->menuSelectableItems[i] = new ScreenText(this->_data, "square-deal");
+	}
+}
+
+void MenuState::Layout()
+{
+	//this->text[0]
 }
 
 void MenuState::Draw(float dt)
 {
-	_data->_window.draw(this->text[0]->getScreenText());
+	//_data->_window.draw(this->text[0]->getScreenText());
 }
 
 void MenuState::Update(float dt)

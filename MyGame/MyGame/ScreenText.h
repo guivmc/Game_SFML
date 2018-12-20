@@ -14,4 +14,10 @@ public:
 
 	//Getters
 	sf::Text &getScreenText();
+
+	//Setters
+	void setPosition(float x, float y);
+	void setText(std::string text);
+	void setFont(std::string keyName);
+	void setColor(sf::Color color);
 };
