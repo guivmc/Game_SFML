@@ -8,7 +8,10 @@ class MenuState : public State
 private:
 	GameDataRef _data;
 
-	ScreenText* menuSelectableItems[4];
+	ScreenText* selectableItems[3];
+	ScreenText* mainMenuText;
+
+	short itemSelected = 0;
 public:
 	MenuState(GameDataRef data);
 

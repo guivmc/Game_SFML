@@ -18,6 +18,11 @@ sf::Text &ScreenText::getScreenText()
 	return this->screenText;
 }
 
+sf::FloatRect ScreenText::getScreenTextSize()
+{
+	return this->screenText.getGlobalBounds();
+}
+
 #pragma endregion
 
 #pragma region Setters
@@ -44,7 +49,7 @@ void ScreenText::setFont(std::string keyName)
 
 void ScreenText::setColor(sf::Color color)
 {
-	this->screenText.setColor(color);
+	this->screenText.setFillColor(color);
 }
 
 #pragma endregion

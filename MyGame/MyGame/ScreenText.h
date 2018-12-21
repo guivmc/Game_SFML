@@ -14,6 +14,7 @@ public:
 
 	//Getters
 	sf::Text &getScreenText();
+	sf::FloatRect getScreenTextSize();
 
 	//Setters
 	void setPosition(float x, float y);
