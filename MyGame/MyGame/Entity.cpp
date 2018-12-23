@@ -1,30 +1,30 @@
 #include "pch.h"
 #include "Entity.h"
 
-Entity::Entity(int x, int y)
+Entity::Entity(GameDataRef data, int x, int y, const std::string& fileName, const std::string& keyName) : _data(data)
 {
-	this->x = x;
-	this->y = y;
+	this->_data->_assets.LoadTexture(fileName, keyName);
+}
+
+Entity::Entity(GameDataRef data, const std::string& fileName, const std::string& keyName) : _data(data)
+{
+	this->_data->_assets.LoadTexture(fileName, keyName);
+	this->sprite.setTexture(this->_data->_assets.getTexture(keyName));
 }
 
 //Getters
-int Entity::getX()
+sf::Sprite Entity::getSprite()
 {
-	return x;
-}
-
-int Entity::getY()
-{
-	return y;
+	return sprite;
 }
 
 //Setters
-void Entity::setX(int x)
+void Entity::setSpriteRect(sf::IntRect rect)
 {
-	this->x = x;
+	this->sprite.setTextureRect(rect);
 }
 
-void Entity::setY(int y)
+void Entity::setSpritePosition(float x, float y)
 {
-	this->y = y;
+	this->sprite.setPosition(x, y);
 }

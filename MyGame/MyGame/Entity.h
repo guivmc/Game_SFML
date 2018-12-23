@@ -1,19 +1,25 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+#include "Engine.h"
+
 class Entity
 {
 protected:
-	int x, y;
+	sf::Sprite sprite;
+
+	GameDataRef _data;
 
 public:
 	Entity() {}
    ~Entity() {}
-	Entity(int x, int y);
+	Entity(GameDataRef data, int x, int y, const std::string& fileName, const std::string& keyName);
+	Entity(GameDataRef data, const std::string& fileName, const std::string& keyName);
+
 
 	//Getters
-	int getX();
-	int getY();
+	sf::Sprite getSprite();
 
 	//Setters
-	void setX(int x);
-	void setY(int y);
+	void setSpriteRect(sf::IntRect  rect);
+	void setSpritePosition(float x, float y);
 };

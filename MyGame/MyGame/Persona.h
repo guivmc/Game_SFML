@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
+#include "Entity.h"
 
-class Persona
+class Persona : public Entity
 {
 protected:
 	//Logic
@@ -10,9 +11,7 @@ protected:
 	sf::RectangleShape bounds;
 
 	//Graphics
-	int x, y;
 	int id;
-	sf::Sprite sprite;
 public:
 	Persona() {}
    ~Persona() {}
@@ -21,6 +20,4 @@ public:
 	virtual void update(float dt) = 0;
 
 	bool isDead();
-
-	sf::Sprite &getSprite();
 };

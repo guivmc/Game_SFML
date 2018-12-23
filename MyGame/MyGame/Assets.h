@@ -4,8 +4,6 @@
 #include <iostream>      
 #include <stdexcept> 
 
-using namespace sf;
-
 class Assets
 {
 private:
@@ -17,7 +15,7 @@ public:
 	#pragma region Texture
    //Load a texture.
    //KeyName is the name used to recover the texture in memory.
-	void LoadTexture(const std::string &keyName);
+	void LoadTexture(const std::string &fileName, const std::string &keyName);
 	//Unload all loaded textures.
 	void UnloadAllTexture();
 	//Return true is the texture is already loaded.

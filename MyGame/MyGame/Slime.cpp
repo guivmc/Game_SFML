@@ -12,5 +12,4 @@ void Slime::update(float dt)
 {
 	anim.PlayAnim(0, dt);
 	this->getSprite().setTextureRect(anim.getResultRect());
-	sprite.setPosition(x, y);
 }

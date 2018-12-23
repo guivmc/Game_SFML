@@ -3,13 +3,15 @@
 
 #pragma region Texture
 
-void Assets::LoadTexture(const std::string &keyName)
+void Assets::LoadTexture(const std::string &fileName, const std::string &keyName)
 {
 	if (this->IsTextureLoaded(keyName))
 		return;
 
+	std::string a = "C:/res/texture/" + fileName + ".png";
+
 	sf::Texture tex;
-	if (tex.loadFromFile("C:/res/chars/" + keyName + "/" + keyName + ".png"))
+	if (tex.loadFromFile("C:/res/texture/" + fileName + ".png"))
 	{
 		this->textureMap[keyName] = tex;
 	}

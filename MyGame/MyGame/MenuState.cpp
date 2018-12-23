@@ -11,6 +11,12 @@ void MenuState::Init()
 {
 	this->mainMenuText = new ScreenText(this->_data, "square-deal");
 
+	this->uiArrow = new Entity(this->_data, "UI/UI_Arrows", "UI_Arrows");
+	
+	this->uiArrow->setSpriteRect(sf::IntRect(0, 0, 16, 16));
+
+	this->uiArrow->setSpritePosition(50.0f, 50.0f);
+
 	for (size_t i = 0; i < std::size(selectableItems); i++)
 	{
 		this->selectableItems[i] = new ScreenText(this->_data, "square-deal");
@@ -45,6 +51,8 @@ void MenuState::Draw(float dt)
 {
 	_data->_window.draw(this->mainMenuText->getScreenText());
 
+	_data->_window.draw(this->uiArrow->getSprite());
+
 	for (size_t i = 0; i < std::size(selectableItems); i++)
 	{
 		_data->_window.draw(this->selectableItems[i]->getScreenText());
@@ -70,7 +78,7 @@ void MenuState::Input()
 		{
 		case 0:
 			// Switch To Game State
-			this->_data->_stateMachine.AddState(StateRef(new LevelOne(_data)), true);
+			//this->_data->_stateMachine.AddState(StateRef(new LevelOne(_data)), true);
 			break;
 		case 1:
 			std::cout << "Case 1";

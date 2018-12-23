@@ -7,14 +7,14 @@ EntityManager::EntityManager(GameDataRef data) : _data(data)
 
 void EntityManager::AddEntity(int x, int y, float hp, const std::string &keyName)
 {
-	if (!_data->_assets.IsTextureLoaded(keyName))
+	/*if (!_data->_assets.IsTextureLoaded(keyName))
 	{
 		_data->_assets.LoadTexture(keyName);
 	}
 
 	Persona *per = new Slime(x, y, hp, _data->_assets.getTexture(keyName));
 
-	entities.push_back(per);
+	entities.push_back(per);*/
 }
 
 void EntityManager::ClearAll()
