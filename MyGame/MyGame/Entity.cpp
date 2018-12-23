@@ -13,7 +13,7 @@ Entity::Entity(GameDataRef data, const std::string& fileName, const std::string&
 }
 
 //Getters
-sf::Sprite Entity::getSprite()
+sf::Sprite &Entity::getSprite()
 {
 	return sprite;
 }

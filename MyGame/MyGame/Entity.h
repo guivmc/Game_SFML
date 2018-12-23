@@ -17,7 +17,7 @@ public:
 
 
 	//Getters
-	sf::Sprite getSprite();
+	sf::Sprite &getSprite();
 
 	//Setters
 	void setSpriteRect(sf::IntRect  rect);
