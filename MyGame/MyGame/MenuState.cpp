@@ -11,7 +11,7 @@ void MenuState::Init()
 {
 	this->mainMenuText = new ScreenText(this->_data, "square-deal");
 
-	this->uiArrow = new Entity(this->_data, "UI/UI_Arrows", "UI_Arrows");
+	this->uiArrow = new UIIcon(this->_data, "UI/UI_Arrows", "UI_Arrows");
 	
 	this->uiArrow->setSpriteRect(sf::IntRect(0, 0, 16, 16));
 

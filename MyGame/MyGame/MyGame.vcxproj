@@ -170,6 +170,7 @@
     <ClInclude Include="Slime.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateHandler.h" />
+    <ClInclude Include="UIIcon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
@@ -196,6 +197,7 @@
     <ClCompile Include="Slime.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateHandler.cpp" />
+    <ClCompile Include="UIIcon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
